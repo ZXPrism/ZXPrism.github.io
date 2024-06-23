@@ -1,1 +1,4 @@
-site_name: My Docs
+site_name: ZXPrism's Blog
+site_url: https://zxprism.github.io
+theme:
+  name: material
