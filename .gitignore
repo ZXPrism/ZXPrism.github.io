@@ -1,0 +1,9 @@
+.vs
+.vscode
+.cache
+.xmake
+bin
+build
+out
+test
+.cph
