@@ -13,7 +13,7 @@ date:
 ## 分析
 
 ## 代码
-```cpp linenums=1
+```cpp linenums="1"
 ```
 
 ## 感悟
