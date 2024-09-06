@@ -46,7 +46,7 @@ void solve() {
     if (ok) {
         std::cout << ans << '\n';
     } else {
-        std::cout << "orz\n";
+        std::cout << "not a connected graph\n";
     }
 }
 ```
