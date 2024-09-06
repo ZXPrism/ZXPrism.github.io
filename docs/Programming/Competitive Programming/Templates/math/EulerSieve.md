@@ -4,7 +4,7 @@ date:
 ---
 
 # Euler Sieve
-使用 $O(n)$ 的时间预处理质数。
+使用 $\mathcal{O}(n)$ 的时间预处理质数。
 
 ``` cpp linenums="1" title="Euler Sieve Code"
 class EulerSieve {

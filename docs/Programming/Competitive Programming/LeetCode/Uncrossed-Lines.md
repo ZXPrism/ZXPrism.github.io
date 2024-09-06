@@ -31,41 +31,41 @@ date:
 ## 代码
 ```cpp linenums="1"
 int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
-        std::map<int, std::vector<int>> m;
-        int n1 = nums1.size(), n2 = nums2.size();
-        for (int i = 0; i < n2; i++) {
-            m[nums2[i]].push_back(i);
+    std::map<int, std::vector<int>> m;
+    int n1 = nums1.size(), n2 = nums2.size();
+    for (int i = 0; i < n2; i++) {
+        m[nums2[i]].push_back(i);
+    }
+
+    std::vector<std::vector<int>> dp(n1, std::vector<int>(n2, -1));
+
+    auto dfs = [&](auto&& self, int k, int prev) {
+        if (k == n1) {
+            return 0;
         }
 
-        std::vector<std::vector<int>> dp(n1, std::vector<int>(n2, -1));
+        if (prev != -1 && dp[k][prev] != -1) {
+            return dp[k][prev];
+        }
 
-        auto dfs = [&](auto&& self, int k, int prev) {
-            if (k == n1) {
-                return 0;
+        int res = 0;
+        res = std::max(res, self(self, k + 1, prev));
+        for (auto idx : m[nums1[k]]) {
+            if (idx > prev) {
+                res = std::max(res, 1 + self(self, k + 1, idx));
+                break;
             }
+        }
 
-            if (prev != -1 && dp[k][prev] != -1) {
-                return dp[k][prev];
-            }
+        if (prev != -1) {
+            dp[k][prev] = res;
+        }
 
-            int res = 0;
-            res = std::max(res, self(self, k + 1, prev));
-            for (auto idx : m[nums1[k]]) {
-                if (idx > prev) {
-                    res = std::max(res, 1 + self(self, k + 1, idx));
-                    break;
-                }
-            }
+        return res;
+    };
 
-            if (prev != -1) {
-                dp[k][prev] = res;
-            }
-
-            return res;
-        };
-
-        return dfs(dfs, 0, -1);
-    }
+    return dfs(dfs, 0, -1);
+}
 ```
 
 ## 感悟
