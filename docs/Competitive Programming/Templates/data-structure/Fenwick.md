@@ -10,18 +10,12 @@ date:
 template <typename T>
 class Fenwick {
 public:
-    Fenwick() = default;
-
     explicit Fenwick(int n) : _N(n) {
-        _Data.resize(n + 1);
-    }
-
-    void Init(int n) {
         _N = n;
         _Data.resize(n + 1);
     }
 
-    Fenwick(const std::vector<T> &v) {
+    explicit Fenwick(const std::vector<T> &v) {
         _N = v.size();
         _Data.resize(_N + 1);
         for (int i = 1, j = 0; i <= _N; i++) {

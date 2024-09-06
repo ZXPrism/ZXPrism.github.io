@@ -10,13 +10,7 @@ date:
 ``` cpp linenums="1" title="DSU Code"
 class DSU {
 public:
-    DSU() = default;
-
     explicit DSU(int n) {
-        _Parent = std::vector<int>(n, -1);
-    }
-
-    void Init(int n) {
         _Parent = std::vector<int>(n, -1);
     }
 
