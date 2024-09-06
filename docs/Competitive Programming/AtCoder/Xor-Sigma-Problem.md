@@ -13,7 +13,7 @@ date:
 （待施工）
 
 ## 代码
-```cpp
+```cpp linenums=1
 void solve() {
     int n = 0;
     std::cin >> n;

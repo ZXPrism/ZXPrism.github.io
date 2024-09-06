@@ -8,7 +8,7 @@ date:
 
 一般的树状数组无法维护区间最值，因为取最值的操作不可逆，想要正确地更新最值，必须更新所有受影响的区间，重新计算各个父节点值，而线段树做的正是这样的事。
 
-```cpp linenums="1" title="Segment Tree Code"
+```cpp linenums="1"
 template <typename T>
 class SegmentTree {
 public:
@@ -18,7 +18,8 @@ public:
         _Tag.resize(_N << 2);
     }
 
-    explicit SegmentTree(const std::vector<T> &v) {
+    template <typename U>
+    explicit SegmentTree(const std::vector<U> &v) {
         _N = v.size();
         _Data.resize(_N << 2);
         _Tag.resize(_N << 2);
@@ -35,7 +36,8 @@ public:
     }
 
 private:
-    void BuildTree(const std::vector<T> &v, int l, int r, int cur) {
+    template <typename U>
+    void BuildTree(const std::vector<U> &v, int l, int r, int cur) {
         if (l == r) {
             _Data[cur] = v[l - 1];
             return;

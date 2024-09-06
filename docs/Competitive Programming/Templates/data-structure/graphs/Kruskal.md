@@ -9,7 +9,7 @@ Kruskal 算法，用于求解最小生成树，时间复杂度 $\mathcal{O}(e\lo
 
 代码中的 `DSU` 类见本博客 `Competitive Programming / Templates / DataStructure` 下的 `DSU (Disjoint Set Union)` 一文。
 
-``` cpp linenums="1" title="Kruskal Code"
+``` cpp linenums="1"
 struct Edge {
     int u, v, w;
 };

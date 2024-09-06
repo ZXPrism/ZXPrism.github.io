@@ -7,7 +7,7 @@ date:
 
 基础的并查集，使用路径压缩与启发式合并。
 
-``` cpp linenums="1" title="DSU Code"
+``` cpp linenums="1"
 class DSU {
 public:
     explicit DSU(int n) {

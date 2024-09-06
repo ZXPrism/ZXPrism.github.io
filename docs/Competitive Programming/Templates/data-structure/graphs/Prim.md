@@ -9,7 +9,7 @@ date:
 
 根据时间复杂度可知，它在稠密图中表现不如 Kruskal 算法以及自己的 $\mathcal{O}(n^2)$ 暴力形式，所以优化并不适用于所有情况，一般建议求最小生成树统一使用 Kruskal 算法。
 
-``` cpp linenums="1" title="Prim Code"
+``` cpp linenums="1"
 struct Edge {
     int v;
     int w;

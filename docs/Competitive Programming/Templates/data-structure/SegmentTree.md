@@ -6,7 +6,7 @@ date:
 # Segment Tree (Range Add + Range Sum)
 基础的线段树，支持区间加与区间和查询。
 
-```cpp linenums="1" title="Segment Tree Code"
+```cpp linenums="1"
 template <typename T>
 class SegmentTree {
 public:
@@ -16,7 +16,8 @@ public:
         _Tag.resize(_N << 2);
     }
 
-    explicit SegmentTree(const std::vector<T> &v) {
+    template <typename U>
+    explicit SegmentTree(const std::vector<U> &v) {
         _N = v.size();
         _Data.resize(_N << 2);
         _Tag.resize(_N << 2);
@@ -33,7 +34,8 @@ public:
     }
 
 private:
-    void BuildTree(const std::vector<T> &v, int l, int r, int cur) {
+    template <typename U>
+    void BuildTree(const std::vector<U> &v, int l, int r, int cur) {
         if (l == r) {
             _Data[cur] = v[l - 1];
             return;

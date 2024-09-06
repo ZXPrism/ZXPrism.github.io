@@ -29,7 +29,7 @@ date:
 上述过程可以用 DFS 来描述，并通过引入 DP 数组实现记忆化搜索，将指数级别的时间复杂度优化至多项式级别。
 
 ## 代码
-```cpp
+```cpp linenums=1
 int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
         std::map<int, std::vector<int>> m;
         int n1 = nums1.size(), n2 = nums2.size();

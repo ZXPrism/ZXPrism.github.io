@@ -6,7 +6,7 @@ date:
 # Fenwick (BIT)
 基础的树状数组，支持单点修改与区间和查询。
 
-``` cpp linenums="1" title="Fenwick Code"
+``` cpp linenums="1"
 template <typename T>
 class Fenwick {
 public:
